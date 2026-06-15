@@ -1,45 +1,87 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>E-CATIN | PUSKESMAS CIRUAS</title>
-  <link rel="icon"https://raw.githubusercontent.com/iim-bastari/Favicon/refs/heads/main/favicon-32x32.png"/>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #eee;
-      overflow: hidden; /* Mencegah scroll ganda */
-    }
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    .iframe-container {
-      width: 100%;
-      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
-      overflow: hidden;
-    }
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:Arial;
+}
 
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+.menu{
+  display:flex;
+  background:#198754;
+}
+
+.menu button{
+  flex:1;
+  padding:18px;
+  border:none;
+  background:#198754;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.menu button:hover{
+  background:#157347;
+}
+
+#iframeApp{
+  width:100%;
+  height:calc(100vh - 60px);
+  border:none;
+}
+</style>
 </head>
+
 <body>
-  <div class="iframe-container">
-    <iframe
-      id="app"
-      src="https://script.google.com/macros/s/AKfycbwt-2b2VDAgGqpqT4o-UvLfjCSoN_yPzeMKi8oEXTk2vk9NYjwZnl0lG9mqRY6TeSVnUg/exec"
-      scrolling="yes"
-      allowfullscreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      allow="fullscreen; camera; microphone; display-capture; geolocation;">
-    </iframe>
-  </div>
+
+<div class="menu">
+
+<button onclick="bukaForm()">
+📝 PENDAFTARAN
+</button>
+
+<button onclick="bukaKUA()">
+🏢 LOGIN KUA
+</button>
+
+<button onclick="bukaAdmin()">
+⚙️ LOGIN ADMIN
+</button>
+
+</div>
+
+<iframe
+id="iframeApp"
+src="https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=form">
+</iframe>
+
+<script>
+
+function bukaForm(){
+  document.getElementById("iframeApp").src =
+  "https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=form";
+}
+
+function bukaKUA(){
+  document.getElementById("iframeApp").src =
+  "https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=kua";
+}
+
+function bukaAdmin(){
+  document.getElementById("iframeApp").src =
+  "https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=admin";
+}
+
+</script>
+
 </body>
 </html>
