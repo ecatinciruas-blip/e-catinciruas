@@ -4,84 +4,58 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
-html,body{
+
+body{
   margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
   font-family:Arial;
+  background:#f4f8f5;
 }
 
-.menu{
-  display:flex;
-  background:#198754;
+.container{
+  padding:30px;
 }
 
-.menu button{
-  flex:1;
-  padding:18px;
+.btn{
+  display:block;
+  width:100%;
+  padding:22px;
+  margin-bottom:20px;
   border:none;
+  border-radius:15px;
   background:#198754;
   color:white;
-  font-size:16px;
+  font-size:22px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.menu button:hover{
+.btn:hover{
   background:#157347;
 }
 
-#iframeApp{
-  width:100%;
-  height:calc(100vh - 60px);
-  border:none;
-}
 </style>
 </head>
 
 <body>
 
-<div class="menu">
+<div class="container">
 
-<button onclick="bukaForm()">
-📝 PENDAFTARAN
+<button class="btn"
+onclick="location.href='https://script.google.com/macros/s/DEPLOY_ID/exec?page=form'">
+📝 PENDAFTARAN E-CATIN
 </button>
 
-<button onclick="bukaKUA()">
+<button class="btn"
+onclick="location.href='https://script.google.com/macros/s/DEPLOY_ID/exec?page=kua'">
 🏢 LOGIN KUA
 </button>
 
-<button onclick="bukaAdmin()">
+<button class="btn"
+onclick="location.href='https://script.google.com/macros/s/DEPLOY_ID/exec?page=admin'">
 ⚙️ LOGIN ADMIN
 </button>
 
 </div>
-
-<iframe
-id="iframeApp"
-src="https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=form">
-</iframe>
-
-<script>
-
-function bukaForm(){
-  document.getElementById("iframeApp").src =
-  "https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=form";
-}
-
-function bukaKUA(){
-  document.getElementById("iframeApp").src =
-  "https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=kua";
-}
-
-function bukaAdmin(){
-  document.getElementById("iframeApp").src =
-  "https://script.google.com/macros/s/DEPLOY_ID_LU/exec?page=admin";
-}
-
-</script>
 
 </body>
 </html>
